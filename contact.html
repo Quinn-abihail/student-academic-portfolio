@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Regina Abihail Enudi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Regina<span>.</span></a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="planner.html">Academic Planner</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Get in Touch</h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info glass-card">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always open to discussing data analytics, interesting projects, or potential collaborations. 
+                        Reach out through the form or via my direct contact details below.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">&#9993;</div>
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Email</span>
+                                <strong>reginaadesuwa1@gmail.com</strong>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">&#128222;</div>
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Phone</span>
+                                <strong>+234 905 701 3268</strong>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">&#128205;</div>
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.85rem;">Location</span>
+                                <strong>Lagos, Nigeria</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-card">
+                    <div id="form-success">
+                        <strong>Success!</strong> Your message has been sent successfully. I will get back to you soon.
+                    </div>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Jane Doe">
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="jane@example.com">
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="09012345678">
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="How can I help you?"></textarea>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Regina Abihail Enudi. COS 106 Term Project - Miva Open University.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
