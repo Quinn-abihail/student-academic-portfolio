@@ -3,15 +3,11 @@
 :root {
   --bg-dark: #07090F;
   --bg-darker: #040508;
-  --bg-card: rgba(20, 24, 38, 0.6);
   --primary-color: #8B5CF6;
   --primary-hover: #A78BFA;
   --primary-glow: rgba(139, 92, 246, 0.5);
-  --secondary-color: #38BDF8;
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --font-main: 'Outfit', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -22,43 +18,12 @@
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: 'Outfit', sans-serif;
   background-color: var(--bg-darker);
   color: var(--text-main);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* Background Glows */
-.bg-glow, .bg-glow-2 {
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.bg-glow {
-  top: -20%;
-  left: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
-}
-
-.bg-glow-2 {
-  bottom: -20%;
-  right: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%);
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  width: 100%;
 }
 
 /* Header */
@@ -76,6 +41,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .logo {
@@ -84,9 +52,7 @@ header {
   color: var(--text-main);
 }
 
-.logo span {
-  color: var(--primary-color);
-}
+.logo span { color: var(--primary-color); }
 
 .nav-links {
   display: flex;
@@ -105,19 +71,15 @@ header {
   color: var(--text-main);
 }
 
-/* Hero Section */
+/* ====================== HERO ====================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  position: relative;
   padding: 100px 0;
 }
 
-.hero-content {
-  flex: 1;
-  max-width: 600px;
-}
+.hero-content { flex: 1; max-width: 600px; }
 
 .hero-subtitle {
   color: var(--primary-color);
@@ -145,41 +107,27 @@ header {
   gap: 1rem;
 }
 
-/* Hero Image Container + Floating Animation */
 .hero-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
 .profile-img {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  border: 5px solid #8B5CF6;
-  box-shadow: 
-    0 0 40px #8B5CF6,
-    0 0 80px rgba(139, 92, 246, 0.6);
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 0 40px var(--primary-glow);
   object-fit: cover;
-  animation: float 6s ease-in-out infinite;
-  transition: transform 0.4s ease;
+  transition: var(--transition);
 }
 
 .profile-img:hover {
   transform: scale(1.05);
 }
 
-/* Floating / Bouncing Animation (like the first image) */
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg); 
-  }
-  50% { 
-    transform: translateY(-25px) rotate(2deg); 
-  }
-}/* Buttons */
+/* Buttons */
 .btn {
   padding: 0.85rem 1.8rem;
   border-radius: 9999px;
@@ -205,7 +153,137 @@ header {
 
 .btn-outline:hover {
   background: rgba(139, 92, 246, 0.1);
-  color: var(--primary-hover);
+}
+
+/* ====================== ACADEMIC PLANNER ====================== */
+.planner-section { padding: 4rem 0; }
+
+.planner-card {
+  background: rgba(20, 24, 38, 0.85);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-number { font-size: 2.8rem; font-weight: 700; color: #8B5CF6; }
+.stat-label { color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem; }
+
+.add-task-row { display: flex; gap: 1rem; margin-bottom: 2rem; }
+.task-input { flex: 1; padding: 1rem 1.5rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(139,92,246,0.3); border-radius: 12px; color: white; }
+
+/* ====================== ABOUT ME ====================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.profile-card, .glass-card {
+  background: rgba(20, 24, 38, 0.85);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tag {
+  background: rgba(139, 92, 246, 0.15);
+  color: #C4B5FD;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* ====================== PROJECTS ====================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(20, 24, 38, 0.9);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  transition: all 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.8rem;
+}
+
+.project-info h3 {
+  color: #E0E7FF;
+  margin-bottom: 0.8rem;
+}
+
+/* ====================== CONTACT ====================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.contact-info, .contact-form {
+  background: rgba(20, 24, 38, 0.85);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 12px;
+  color: white;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 1.1rem;
+  background: #8B5CF6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 /* Footer */
@@ -213,19 +291,14 @@ footer {
   text-align: center;
   padding: 2rem 0;
   color: var(--text-muted);
-  font-size: 0.95rem;
   margin-top: auto;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 4rem;
+  .hero, .contact-grid, .about-grid { 
+    flex-direction: column; 
+    text-align: center; 
   }
-  .profile-img {
-    width: 280px;
-    height: 280px;
-  }
+  .profile-img { width: 280px; height: 280px; }
 }
